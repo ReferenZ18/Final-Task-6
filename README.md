@@ -138,7 +138,30 @@ In this task, we used and learned the MongoDB software, following the provided s
   <img src="Images/T5.PNG" alt="Text for Query 5" width="1200">
 </p>
 
+## Deleting Documents
 
+<p align="center">
+  1. delete the movie "Pee Wee Herman's Big Adventure". <br> Code: <code> db.movies.deleteOne ({_id: ObjectId('68280f11172fdf11a7fdf6f0')})</code>
+</p>
+<p align="center">
+  <img src="Images/D1.PNG" alt="Text for Query 5" width="600">
+</p> 
+
+<p align="center">
+2. Delete the movie "Avatar". <br> Code: <code> db.movies.deleteOne ({_id: ObjectId('72280f91472fdf11a0fdf6f0')}) </code>
+</p>
+<p align="center">
+  <img src="Images/D1.PNG" alt="Text for Query 5" width="600">
+</p>
 
 ## Relationships
+
+1. Insert the following to `user` collection. <br> Code: <code> </code>
+  <img src="Images/User1.PNG" alt="Text for Query 5" width="400">
+
+  After Insert Results:
+  
+  <img src="Images/User1R.PNG" alt="Text for Query 5" width="400">
+
+  
 
