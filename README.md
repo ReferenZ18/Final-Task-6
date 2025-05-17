@@ -156,12 +156,90 @@ In this task, we used and learned the MongoDB software, following the provided s
 
 ## Relationships
 
-1. Insert the following to `user` collection. <br> Code: <code> </code>
-  <img src="Images/User1.PNG" alt="Text for Query 5" width="400">
+<p align="center">
+Insert the following to <code>user</code> collection.<br>
+Code: <code>db.users.insertMany([{ _id: 1, username: "GoodGuyGreg", first_name: "Good Guy", last_name: "Greg" }, { _id: 2, username: "ScumbagSteve", full_name: { first: "Scumbag", last: "Steve" } }])</code>
+</p>
 
-  After Insert Results:
-  
-  <img src="Images/User1R.PNG" alt="Text for Query 5" width="400">
+<p align="center">
+  <img src="Images/User1.PNG" alt="User Insert" width="400"><br>
+  After Insert Results:<br>
+  <img src="Images/User1R.PNG" alt="User Insert Result" width="400">
+</p>
 
-  
+<p align="center">
+Insert the following documents into a <code>posts</code> collection.<br>
+Code: <code>db.comments.insertMany([{ username: "GoodGuyGreg", comment: "Hope you got a good deal!", post: ObjectId("68282cda172fd1a7fdf6f2") }, { username: "GoodGuyGreg", comment: "What's mine is yours!", post: ObjectId("68282cec172fd1a7fdf6f6") }, { username: "GoodGuyGreg", comment: "Don't violate the licensing agreement!", post: ObjectId("68282cf0172fd1a7fdf6f7") }])</code>
+</p>
 
+<p align="center">
+  <img src="Images/C1.PNG" alt="Comment Insert 1" width="400"><br>
+  <img src="Images/C2.PNG" alt="Comment Insert 2" width="400">
+</p>
+
+<p align="center">
+Insert the following documents into a <code>comments</code> collection.<br>
+Code:<br> <code>
+db.comments.insert({username:"GoodGuyGreg", comment:"Hope you got a good deal!", post:ObjectId("5ca0b7e96435f98b5901f463")});<br>
+db.comments.insert({username:"GoodGuyGreg", comment:"What's mine is yours!", post:ObjectId("5ca0b9706435f98b5901f46a")});<br>
+db.comments.insert({username:"GoodGuyGreg", comment:"Don't violate the licensing agreement!", post:ObjectId("5ca0b8766435f98b5901f467")});<br>
+db.comments.insert({username:"ScumbagSteve", comment:"It still isn't clean", post:ObjectId("5ca0b8546435f98b5901f466")});<br>
+db.comments.insert({username:"ScumbagSteve", comment:"Denied your PR cause I found a hack", post:ObjectId("5ca0b9256435f98b5901f469")});
+</code>
+</p>
+
+<p align="center">
+  <img src="Images/Post1-1.PNG" alt="Post Insert 1" width="400"><br>
+  <img src="Images/Post1-2.PNG" alt="Post Insert 2" width="400"><br><br>
+  Relational Afterwards:<br>
+  <img src="Images/PostResult.PNG" alt="Final Relational Result" width="400">
+</p>
+
+## Query
+<p align="center">
+<strong>1. Find all users</strong><br><br>
+<code>db.users.find().pretty()</code><br><br>
+<img src="Images/RelationalQ1.PNG" alt="Query 1" width="400">
+</p>
+
+<p align="center">
+<strong>2. Find all posts</strong><br><br>
+<code>db.posts.find().pretty()</code><br><br>
+<img src="Images/RelationalQ2.PNG" alt="Query 2" width="400">
+</p>
+
+<p align="center">
+<strong>3. Find all posts authored by "GoodGuyGreg"</strong><br><br>
+<code>db.posts.find({username: "GoodGuyGreg"})</code><br><br>
+<img src="Images/RelationalQ3.PNG" alt="Query 3" width="400">
+</p>
+
+<p align="center">
+<strong>4. Find all posts authored by "ScumbagSteve"</strong><br><br>
+<code>db.posts.find({username: "ScumbagSteve"})</code><br><br>
+<img src="Images/RelationalQ4.PNG" alt="Query 4" width="400">
+</p>
+
+<p align="center">
+<strong>5. Find all comments</strong><br><br>
+<code>db.comments.find().pretty()</code><br><br>
+<img src="Images/RelationalQ5.PNG" alt="Query 5" width="400">
+</p>
+
+<p align="center">
+<strong>6. Find all comments authored by "GoodGuyGreg"</strong><br><br>
+<code>db.comments.find({username: "GoodGuyGreg"})</code><br><br>
+<img src="Images/RelationalQ6.PNG" alt="Query 6" width="400">
+</p>
+
+<p align="center">
+<strong>7. Find all comments authored by "ScumbagSteve"</strong><br><br>
+<code>db.comments.find({username: "ScumbagSteve"})</code><br><br>
+<img src="Images/RelationalQ7.PNG" alt="Query 7" width="400">
+</p>
+
+<p align="center">
+<strong>8. Find all comments belonging to the post "Reports a bug in your code"</strong><br><br>
+<code>db.comments.find({post: ObjectId("682862155750a49fa77b8e7b")})</code><br><br>
+<img src="Images/RelationalQ8.PNG" alt="Query 8" width="400">
+</p>
