@@ -1,8 +1,7 @@
 # Final Task 6 - MongoDB Practice
 
-In this task we utilize and learned the MongoDB program, Using the given guide step-by-step by our Instructor.
+In this task, we used and learned the MongoDB software, following the provided step-by-step guide from our Instructor.
 
-## MongoDB Database
 
 ## Queries
 
